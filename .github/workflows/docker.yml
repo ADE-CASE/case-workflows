@@ -25,7 +25,8 @@ jobs:
        name : Check Direktory
        run: | 
          ls
-       - name: Login to Container Registry
+      - 
+        name: Login to Container Registry
         run: |
           docker context use default
           docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_token }}
