@@ -30,13 +30,8 @@ jobs:
         name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
-
-      - name: Load Environment Variable
-        if: inputs.env_file != ''
-        run: source ${{ inputs.env_file }}
-
+          username: ${{ secrets.docker_hub_secret }}
+          password: ${{ secrets.docker_hub_token }}
       - # stage build dan push docker 
         name: Build and push
         uses: docker/build-push-action@v3
