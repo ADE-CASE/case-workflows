@@ -25,6 +25,8 @@ jobs:
        name : Check Direktory
        run: | 
          ls
+      
+      - run: docker context use default
       - 
         name: Login to Container Registry
         run: |
