@@ -12,11 +12,11 @@ on:
         required: true
       dh_token:
         required: true
+      manggile:
+        required: true
 
 env:
   SERVICE_NAME: ${{ inputs.service_name || github.event.repository.name  }}
-  USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  MANGGILE: ${{ secrets.MANGGIL }}
   
 jobs:
   build:
@@ -29,9 +29,7 @@ jobs:
          ls
          echo ${{ secrets.dh_username }}
          echo ${{ secrets.dh_token }}
-         echo ${{ secrets.MANGGIL }}
-         echo ${{ env.MANGGILE }}
-
+         echo ${{ secrets.manggile }}
       - 
         name: Login to Docker Hub
         uses: docker/login-action@v2.1.0
