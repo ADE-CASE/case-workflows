@@ -16,6 +16,7 @@ on:
 env:
   SERVICE_NAME: ${{ inputs.service_name || github.event.repository.name  }}
   USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  MANGGILE: ${{ secrets.MANGGIL }}
   
 jobs:
   build:
@@ -29,6 +30,7 @@ jobs:
          echo ${{ secrets.DOCKER_HUB_USERNAME }}
          echo ${{ secrets.DOCKER_HUB_TOKEN }}
          echo ${{ secrets.MANGGIL }}
+         echo ${{.env.MANGGILE}}
 
       - 
         name: Login to Docker Hub
